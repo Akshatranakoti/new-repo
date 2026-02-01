@@ -13,7 +13,6 @@ function moveNoButton() {
   const minJumpY = boxHeight / 3;
 
   let x, y;
-
   do {
     x = Math.random() * (boxWidth - btnWidth - padding);
     y = Math.random() * (boxHeight - btnHeight - padding);

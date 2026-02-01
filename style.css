@@ -11,7 +11,7 @@ html, body {
   overflow: hidden;
 }
 
-/* ============ FIRST PAGE ============ */
+/* ========== FIRST PAGE ========== */
 .container {
   position: relative;
   height: 100vh;
@@ -53,7 +53,7 @@ html, body {
   margin-bottom: 35px;
 }
 
-/* ============ BUTTONS ============ */
+/* ========== BUTTONS ========== */
 .buttons {
   position: relative;
   width: 400px;
@@ -85,14 +85,13 @@ html, body {
   transition: left 0.15s ease, top 0.15s ease;
 }
 
-/* ============ LOVE PAGE ============ */
+/* ========== LOVE PAGE ========== */
 .love-page {
   height: 100vh;
   width: 100vw;
   background-image: url("https://drive.google.com/thumbnail?id=1Kas2p-e5Yseot_uD6jV4ul-CE9lOAG4o&sz=s4000");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 
   display: flex;
   justify-content: center;
@@ -109,11 +108,13 @@ html, body {
   z-index: 1;
 }
 
+/* ========== LOVE CONTENT ========== */
 .love-container {
   position: relative;
-  z-index: 4;
+  z-index: 10; /* 🔥 ABOVE EVERYTHING */
   text-align: center;
   color: white;
+  padding-bottom: 40px;
 }
 
 .love-text {
@@ -126,7 +127,32 @@ html, body {
   margin-top: 10px;
 }
 
-/* ============ ANIMATIONS ============ */
+/* ========== SURPRISE BUTTON (FIXED) ========== */
+.canva-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 16px 36px;
+
+  background: linear-gradient(135deg, #ff4d6d, #ff7eb3);
+  color: #fff;
+  text-decoration: none;
+
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 40px;
+
+  box-shadow: 0 0 20px rgba(255, 77, 109, 0.9);
+  animation: heartbeat 1.2s infinite;
+
+  position: relative;
+  z-index: 11;
+}
+
+.canva-btn:active {
+  transform: scale(0.95);
+}
+
+/* ========== ANIMATIONS ========== */
 .hearts::before {
   content: "❤️ 💖 💕 💘 💓 ❤️ 💖 💕";
   position: absolute;
@@ -152,6 +178,7 @@ html, body {
   animation: confetti-fall 6s linear infinite;
 }
 
+/* positions */
 .confetti span:nth-child(1) { left: 10%; animation-delay: 0s; }
 .confetti span:nth-child(2) { left: 20%; animation-delay: 1s; }
 .confetti span:nth-child(3) { left: 30%; animation-delay: 2s; }
@@ -163,6 +190,7 @@ html, body {
 .confetti span:nth-child(9) { left: 90%; animation-delay: 0.7s; }
 .confetti span:nth-child(10){ left: 95%; animation-delay: 1.8s; }
 
+/* keyframes */
 @keyframes heartbeat {
   0% { transform: scale(1); }
   50% { transform: scale(1.25); }
@@ -181,7 +209,7 @@ html, body {
   }
 }
 
-/* ============ MOBILE FIX ============ */
+/* ========== MOBILE FIX ========== */
 @media (max-width: 768px) {
 
   .birthday { font-size: 2rem; }
@@ -195,30 +223,16 @@ html, body {
   #yesBtn { left: 10%; }
   #noBtn { left: 55%; }
 
-  /* 🔥 IMPORTANT FIX */
   .love-page {
     background-size: contain;
-    background-position: center;
     background-color: #000;
   }
 
   .love-text { font-size: 2.4rem; }
   .sub-text { font-size: 1.2rem; }
-}
-/* ===== Canva Redirect Button ===== */
-.canva-btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 14px 32px;
-  background: linear-gradient(135deg, #ff4d6d, #ff7eb3);
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-  border-radius: 30px;
-  box-shadow: 0 0 15px rgba(255, 77, 109, 0.8);
-  animation: heartbeat 1.2s infinite;
-}
 
-.canva-btn:hover {
-  transform: scale(1.1);
+  .canva-btn {
+    font-size: 1.1rem;
+    padding: 14px 28px;
+  }
 }

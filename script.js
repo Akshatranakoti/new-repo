@@ -9,8 +9,6 @@ function moveNoButton() {
   const btnHeight = noBtn.offsetHeight;
 
   const padding = 10;
-
-  // Minimum jump distance (so it REALLY moves)
   const minJumpX = boxWidth / 3;
   const minJumpY = boxHeight / 3;
 
@@ -28,11 +26,9 @@ function moveNoButton() {
   noBtn.style.top = `${y}px`;
 }
 
-// Move on hover
 noBtn.addEventListener("mouseenter", moveNoButton);
-
-// ALSO move if cursor gets too close 😈
 noBtn.addEventListener("mousemove", moveNoButton);
+noBtn.addEventListener("touchstart", moveNoButton);
 
 yesBtn.addEventListener("click", () => {
   window.location.href = "love.html";

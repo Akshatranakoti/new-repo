@@ -11,7 +11,7 @@ html, body {
   overflow: hidden;
 }
 
-/* ---------- FIRST PAGE ---------- */
+/* ================= FIRST PAGE ================= */
 .container {
   position: relative;
   height: 100vh;
@@ -39,21 +39,21 @@ html, body {
 .buttons {
   position: relative;
   z-index: 3;
+  color: white;
+  text-align: center;
 }
 
 .birthday {
   font-size: 2.8rem;
-  color: white;
   margin-bottom: 15px;
 }
 
 .container h1 {
   font-size: 3.2rem;
-  color: white;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
-/* ---------- BUTTONS ---------- */
+/* ================= BUTTONS ================= */
 .buttons {
   position: relative;
   width: 400px;
@@ -82,22 +82,22 @@ html, body {
   position: absolute;
   left: 220px;
   top: 70px;
-  transition: left 0.2s ease, top 0.2s ease;
+  transition: left 0.15s ease, top 0.15s ease;
 }
 
-/* ---------- LOVE PAGE ---------- */
+/* ================= LOVE PAGE ================= */
 .love-page {
   height: 100vh;
   width: 100vw;
   background-image: url("https://drive.google.com/thumbnail?id=1Kas2p-e5Yseot_uD6jV4ul-CE9lOAG4o&sz=s4000");
   background-size: cover;
   background-position: center;
-  position: relative;
-  overflow: hidden;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .love-page::before {
@@ -108,7 +108,6 @@ html, body {
   z-index: 1;
 }
 
-/* ---------- LOVE TEXT ---------- */
 .love-container {
   position: relative;
   z-index: 4;
@@ -123,10 +122,10 @@ html, body {
 
 .sub-text {
   font-size: 1.6rem;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
-/* ---------- FLOATING HEARTS ---------- */
+/* ================= ANIMATIONS ================= */
 .hearts::before {
   content: "❤️ 💖 💕 💘 💓 ❤️ 💖 💕";
   position: absolute;
@@ -138,7 +137,6 @@ html, body {
   pointer-events: none;
 }
 
-/* ---------- CONFETTI ---------- */
 .confetti {
   position: absolute;
   inset: 0;
@@ -149,7 +147,7 @@ html, body {
 .confetti span {
   position: absolute;
   top: -10%;
-  font-size: 2.2rem;
+  font-size: 2rem;
   animation: confetti-fall 6s linear infinite;
 }
 
@@ -164,7 +162,6 @@ html, body {
 .confetti span:nth-child(9) { left: 90%; animation-delay: 0.7s; }
 .confetti span:nth-child(10){ left: 95%; animation-delay: 1.8s; }
 
-/* ---------- ANIMATIONS ---------- */
 @keyframes heartbeat {
   0% { transform: scale(1); }
   50% { transform: scale(1.25); }
@@ -181,4 +178,21 @@ html, body {
     transform: translateY(120vh) rotate(360deg);
     opacity: 0;
   }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .birthday { font-size: 2rem; }
+  .container h1 { font-size: 1.8rem; padding: 0 10px; }
+
+  .buttons {
+    width: 90%;
+    height: 180px;
+  }
+
+  #yesBtn { left: 10%; }
+  #noBtn { left: 55%; }
+
+  .love-text { font-size: 2.5rem; }
+  .sub-text { font-size: 1.2rem; }
 }
